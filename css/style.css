@@ -1,0 +1,1224 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  overflow-x: hidden;
+}
+
+.clear {
+  clear: both;
+}
+
+/* INICIO HEADER */
+
+header {
+  color: white;
+  width: 100%;
+  height: 100px;
+  background-color: rgb(37, 25, 61);
+  overflow: hidden;
+  padding: 20px;
+  font-weight: 300;
+}
+
+.container {
+  max-width: 1350px;
+  margin: 0 auto;
+  padding: 20px 2%;
+  border-radius: 15px;
+}
+
+header > .container {
+  max-width: 1350px;
+  margin: 0 auto;
+  padding: 15px 0 15px 0;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 15px;
+}
+
+.logo {
+  float: left;
+  padding: 0 20px;
+  font-weight: 300;
+  text-transform: uppercase;
+}
+
+.logo a {
+  text-align: start;
+  padding-bottom: 10px;
+  text-transform: uppercase;
+  font-size: 18px;
+  font-weight: 300;
+  color: white;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.logo a:hover {
+  color: #4780b5;
+  transition: all 0.2s ease;
+}
+
+/* INICIO MENU DESKTOP */
+
+.menu-desktop {
+  float: right;
+}
+
+header nav.menu-desktop ul {
+  list-style-type: none;
+  text-transform: uppercase;
+}
+
+nav.menu-desktop ul li {
+  display: inline-block;
+  padding: 0 20px;
+}
+
+nav.menu-desktop ul li a {
+  text-decoration: none;
+  color: white;
+}
+
+nav.menu-desktop ul li a:hover {
+  border-bottom: 1px solid #4780b5;
+  color: #4780b5;
+  transition: all 0.2s ease;
+}
+
+/* FINAL MENU DESKTOP */
+
+/* INICIO MENU MOBILE */
+
+nav.menu-mobile {
+  display: none;
+  float: right;
+  width: 35px;
+  height: 35px;
+  background-image: url(../img/menu1.png);
+  margin-top: -30px;
+  margin-right: 1px;
+  text-align: center;
+  cursor: pointer;
+}
+
+nav.menu-mobile ul {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: 90px;
+  background-color: #2e1f4d;
+  list-style-type: none;
+  display: none;
+}
+
+nav.menu-mobile ul li {
+  padding: 20px;
+  border-bottom: 1px solid #333;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+}
+
+nav.menu-mobile ul li:hover {
+  background-color: rgb(55, 40, 100);
+  transition: all 0.2s ease;
+}
+
+nav.menu-mobile ul li a {
+  text-decoration: none;
+  color: white;
+}
+
+/* FINAL MENU MOBILE */
+
+/* FINAL HEADER */
+
+/* INICIO SECTION INFORMARTIONS */
+
+section.informartions {
+  width: 100%;
+  height: auto;
+  background-color: rgb(37, 25, 61);
+  padding: 20px;
+  font-weight: 300;
+  color: white;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+section.informartions .flex {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  padding: 90px 0;
+}
+
+section.informartions .text-informartions {
+  flex: 0 1 60%;
+}
+
+.text-informartions h2 {
+  font-weight: 300;
+  text-transform: uppercase;
+  width: 80%;
+  font-size: 42px;
+  background: linear-gradient(90deg, #03a9f4, #f441a5); /* gradiente */
+  -webkit-background-clip: text; /* recorta o fundo no texto */
+  -webkit-text-fill-color: transparent; /* deixa o texto transparente para mostrar o gradiente */
+  background-clip: text; /* suporte adicional */
+  color: transparent; /* fallback */
+}
+
+.text-informartions p {
+  margin: 20px 0;
+  line-height: 33px;
+  max-width: 550px;
+}
+
+.text-informartions .center-button {
+  margin-top: 50px;
+  padding: 30px 0;
+}
+
+/* ESTILOS PARA ANIMAÇA DO BOTÃO */
+.container-button {
+  position: relative;
+  display: block;
+  padding: 3px;
+  border-radius: 0.9em;
+  background: linear-gradient(90deg, #03a9f4, #f441a5);
+  cursor: pointer;
+  transition: background 0.4s ease, transform 0.2s; /* LIMITANDO O EFEITO APENAS NO BACKGROUND */
+  align-self: center; /* Centraliza o botão */
+  margin-top: 10px;
+  width: 40%;
+  max-width: 180px;
+}
+
+.container-button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 0.9em;
+  background: linear-gradient(90deg, #03a9f4, #f441a5);
+  z-index: 0;
+  filter: blur(0);
+  transition: filter 0.4s ease;
+}
+
+.container-button.hovered::before {
+  filter: blur(8px);
+}
+
+.container-button.active::before {
+  filter: blur(3px);
+}
+
+.container-button a {
+  position: relative;
+  z-index: 1;
+  font-size: 18px;
+  padding: 0.6em 1.8em;
+  border-radius: 0.5em;
+  border: none;
+  background-color: rgb(37, 25, 61);
+  color: #fff;
+  cursor: pointer;
+  display: block;
+  width: 100%;
+  transition: transform 0.2s;
+  text-decoration: none;
+}
+
+.container-button.active a {
+  transform: scale(0.98);
+}
+
+.text-informartions .center-button {
+  padding: 0;
+  margin-bottom: 20px;
+}
+
+/* ESTILOS PARA A DIV INFORMATIONS-BUTTON Q COMEÇA ESCONDIDA */
+
+.informartions-button {
+  margin: 35px 0;
+  display: none;
+}
+
+.informartions-button h3 {
+  font-weight: 300;
+  text-transform: uppercase;
+  font-size: 35px;
+  background: linear-gradient(
+    90deg,
+    #03a9f4 10%,
+    #f441a5 35%,
+    #f441a5
+  ); /* gradiente */
+  -webkit-background-clip: text; /* recorta o fundo no texto */
+  -webkit-text-fill-color: transparent; /* deixa o texto transparente para mostrar o gradiente */
+  background-clip: text; /* suporte adicional */
+  color: transparent; /* fallback */
+}
+
+.informartions-button p {
+  margin: 20px 0;
+  line-height: 30px;
+  max-width: 550px;
+}
+
+.informartions-button .diferentials {
+  margin: 40px 0;
+}
+
+.informartions-button .diferentials h4 {
+  font-weight: 300;
+  text-transform: uppercase;
+  font-size: 30px;
+  background: linear-gradient(90deg, #03a9f4 10%, #f441a5 35%, #f441a5 ); /* gradiente */
+  -webkit-background-clip: text; /* recorta o fundo no texto */
+  -webkit-text-fill-color: transparent; /* deixa o texto transparente para mostrar o gradiente */
+  background-clip: text; /* suporte adicional */
+  color: transparent; /* fallback */
+}
+
+.informartions-button ul {
+  list-style: none;
+  padding: 0;
+  margin: 10px 0;
+}
+
+.informartions-button ul li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.informartions-button ul li::before {
+  content: "•"; /* marcador */
+  display: inline-block;
+  width: 20px; /* largura fixa para todas as bolinhas */
+  text-align: center; /* centraliza a bolinha dentro do espaço */
+  margin-right: 8px; /* espaço entre bolinha e texto */
+  font-size: 18px;
+  color: #ccc;
+}
+
+.informartions-button .disponibilidade h4 {
+  font-weight: 300;
+  text-transform: uppercase;
+  font-size: 30px;
+  background: linear-gradient(90deg, #03a9f4 20%, #f441a5 35%, #f441a5); /* gradiente */
+  -webkit-background-clip: text; /* recorta o fundo no texto */
+  -webkit-text-fill-color: transparent; /* deixa o texto transparente para mostrar o gradiente */
+  background-clip: text; /* suporte adicional */
+  color: transparent; /* fallback */
+}
+
+.disponibilidade p {
+  line-height: 30px;
+}
+
+.center-img {
+  flex: 0 1 35%; /* largura da imagem */
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.center-img .img {
+  width: 100%; /* 100% DOS 35% */
+  padding-top: 100%;
+  border-radius: 50%;
+  background-image: url(../img/img-perfil.jpeg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* FIM SECTION INFORMARTIONS */
+
+/* INICIO SECTION MY-SERVICES */
+section.my-services {
+  width: 100%;
+  background-color: rgb(37, 25, 61);
+  padding: 20px;
+  color: white;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  font-weight: 300;
+  position: relative; /*  */
+  z-index: 0;
+}
+
+/* REUTILIZANDO CLASSES */
+.center-title {
+  width: 100%;
+  text-align: center;
+  margin: 30px 0;
+  text-transform: uppercase;
+  font-size: 25px;
+  font-weight: 400;
+  color: white;
+}
+
+section.my-services .center-title h2 {
+  margin: 30px 0;
+  text-transform: uppercase;
+  font-size: 35px;
+  font-weight: 300;
+  background: linear-gradient(90deg, #03a9f4 30%, #f441a5 70%); /* gradiente */
+  -webkit-background-clip: text; /* recorta o fundo no texto */
+  -webkit-text-fill-color: transparent; /* deixa o texto transparente para mostrar o gradiente */
+  background-clip: text; /* suporte adicional */
+  color: transparent; /* fallback */
+}
+
+/* LINHA CENTRAL*/
+section.my-services .line {
+  width: 2px;
+  height: 50%;
+  background: linear-gradient(to bottom, #ccc, rgba(255, 255, 255, 0.2));
+  opacity: 0.7;
+  position: absolute;
+  top: 50%; /* CENTRALIZANDO */
+  left: 50%; /* CENTRALIZANDO */
+  transform: translate(-50%, -50%); /* CENTRALIZANDO */
+  z-index: 0;
+}
+
+.my-services .services-flex {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  z-index: 2;
+}
+
+.my-services .container-services {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 700px;
+  margin: 30px 0;
+  padding: 30px 20px;
+  border: 1px solid #ccc;
+  border-radius: 15px;
+  position: relative;
+  z-index: 1;
+  background-color: rgb(37, 25, 61);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  text-align: center;
+}
+
+.my-services .services-flex .container-services:nth-of-type(1),
+.my-services .services-flex .container-services:nth-of-type(3) {
+  align-self: flex-start;
+}
+
+.my-services .services-flex .container-services:nth-of-type(2) {
+  align-self: flex-end;
+}
+
+.my-services .container-services .container-icon {
+  width: 100%;
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 20px;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.my-services .container-services:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.6);
+  background-color: rgb(55, 40, 100);
+}
+
+.my-services .container-services h2 {
+  margin: 5px 0;
+  text-transform: uppercase;
+  font-size: 20px;
+  font-weight: 400;
+  color: #a38cfc;
+}
+
+.my-services .container-services:hover h2 {
+  color: #fff;
+}
+
+.my-services .container-services p {
+  margin: 15px 0;
+  font-size: 15px;
+  font-weight: 300;
+  max-width: 640px;
+  line-height: 1.6;
+  text-align: start;
+}
+
+.my-services .container-icon .icon {
+  display: block;
+  width: 42px;
+  height: 42px;
+  background-size: 100% 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* FIM SECTION MY-SERVICES */
+
+/* INICIO SECTION SKILLS */
+
+section.skills {
+  width: 100%;
+  background-color: rgb(37, 25, 61);
+  padding: 20px;
+  color: white;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  font-weight: 300;
+}
+
+section.skills h2 {
+  text-align: center;
+  margin: 30px 0;
+  text-transform: uppercase;
+  font-size: 40px;
+  font-weight: 300;
+  background: linear-gradient(90deg, #03a9f4 30%, #f441a5 70%); /* gradiente */
+  -webkit-background-clip: text; /* recorta o fundo no texto */
+  -webkit-text-fill-color: transparent; /* deixa o texto transparente para mostrar o gradiente */
+  background-clip: text; /* suporte adicional */
+  color: transparent; /* fallback */
+}
+
+section.skills .skills-flex {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.skills-flex h4 {
+  font-size: 20px;
+  text-align: center;
+  font-weight: 300;
+  margin-bottom: 30px;
+}
+
+section.skills .container-skills {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  width: 70%;
+  max-width: 500px;
+}
+
+.skills .container-skills .icon {
+  display: inline-block;
+  width: 60px;
+  height: 65px;
+  background-size: 100% 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skills .icon:hover {
+  transform: scale(1.2);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/*** FIM SECTION SKILLS ***/
+
+/** INICIO SECTION PROJECTS */
+section.projects {
+  width: 100%;
+  padding: 20px;
+  background-color: rgb(37, 25, 61);
+  color: white;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  font-weight: 300;
+}
+
+section.projects h2 {
+  text-align: center;
+  margin: 30px 0;
+  text-transform: uppercase;
+  font-size: 40px;
+  font-weight: 300;
+  background: linear-gradient(90deg, #03a9f4 30%, #f441a5 70%); /* gradiente */
+  -webkit-background-clip: text; /* recorta o fundo no texto */
+  -webkit-text-fill-color: transparent; /* deixa o texto transparente para mostrar o gradiente */
+  background-clip: text; /* suporte adicional */
+  color: transparent; /* fallback */
+}
+
+section.projects .flex-projects {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+  gap: 20px;
+}
+
+.flex-projects .project-card {
+  justify-content: center;
+  flex: 0 1 30%;
+  text-align: center;
+  padding: 0px 10px;
+  border: 1px solid rgba(204, 204, 204, 0.3);
+  border-radius: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.flex-projects .project-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.6);
+}
+
+.flex-projects .project-card .project-img {
+  width: 100%;
+  height: 190px;
+  aspect-ratio: 16/9;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.flex-projects .project-card h3 {
+  width: 100%;
+  display: inline-block;
+  white-space: normal;
+  margin: 10px 0;
+  font-size: 15px;
+  font-weight: 300;
+  color: white;
+  padding: 5px;
+  word-wrap: break-word; /* garante que palavras muito grandes quebrem */
+}
+
+.project-card a {
+  display: inline-block;
+  white-space: nowrap;
+  margin-bottom: 10px;
+  font-size: 15px;
+  font-weight: 300;
+  color: white;
+  text-decoration: none;
+}
+
+/** FIM SECTION PROJECTS **/
+
+/** INICIO SECTION CONTACT **/
+
+section.contact {
+  width: 100%;
+  padding: 20px 0;
+  background-color: rgb(37, 25, 61);
+  color: white;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  font-weight: 300;
+}
+
+section.contact .contact-flex {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+  padding: 40px 0px;
+}
+
+.contact-flex .contact-social {
+  flex: 0 1 50%;
+  text-align: start;
+}
+
+.contact-flex .contact-social .center-title-2 {
+  width: 100%;
+  text-transform: uppercase;
+  font-weight: 300;
+}
+
+.contact-flex .contact-social h2 {
+  width: 100%;
+  text-align: start;
+  text-transform: uppercase;
+  font-size: 25px;
+  font-weight: 300;
+  color: white;
+  background: linear-gradient(90deg, #03a9f4 30%, #f441a5 70%); /* gradiente */
+  -webkit-background-clip: text; /* recorta o fundo no texto */
+  -webkit-text-fill-color: transparent; /* deixa o texto transparente para mostrar o gradiente */
+  background-clip: text; /* suporte adicional */
+  color: transparent; /* fallback */
+}
+
+.contact-flex .contact-social h3 {
+  text-align: start;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+  font-size: 23px;
+  font-weight: 300;
+  color: white;
+  padding: 15px 0 10px 0;
+}
+
+.contact-flex .contact-social .w100 {
+  width: 100%;
+  display: flex;
+  flex-wrap: nowrap; /* NO RESPONSIVO COLOCO WRAP PARA O SOCIAL CAIR UMA LINHA */
+  gap: 25px;
+}
+
+.w50 {
+  flex: 0 1 50%;
+}
+
+.w100 .w50 h4 {
+  text-align: start;
+  padding-bottom: 10px;
+  text-transform: uppercase;
+  font-size: 18px;
+  font-weight: 300;
+  color: white;
+}
+
+.w100 .w50 a {
+  display: inline-block;
+  text-align: start;
+  font-size: 15px;
+  font-weight: 300;
+  color: #4780b5;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.w100 .w50 a:hover {
+  color: #5da8e7;
+  text-decoration: underline;
+}
+
+.y50 {
+  flex: 0 1 50%;
+}
+
+.w100 .y50 h4 {
+  text-align: start;
+  padding-bottom: 10px;
+  text-transform: uppercase;
+  font-size: 18px;
+  font-weight: 300;
+  color: white;
+}
+
+.y50 .container-social {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.w100 .y50 a {
+  width: 20px;
+  height: 20px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-wrap: nowrap;
+  font-size: 15px;
+  font-weight: 300;
+  color: white;
+  padding: 0 10px;
+  transition: 0.3s ease;
+}
+
+.w100 .y50 a:hover {
+  transform: translateY(-5px);
+}
+
+.contact-flex .contact-form {
+  flex: 0 1 45%;
+  text-align: center;
+}
+
+.contact-flex .contact-form .center-title-form {
+  width: 100%;
+  text-transform: uppercase;
+  margin-bottom: 25px;
+}
+
+.contact-flex .contact-form h3 {
+  width: 60%;
+  text-align: start;
+  text-transform: uppercase;
+  font-size: 23px;
+  font-weight: 300;
+  color: white;
+  margin-bottom: 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.contact-flex .contact-form form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.contact-flex .contact-form form input {
+  width: 100%;
+  padding: 10px;
+  background-color: rgb(37, 25, 61);
+  color: white;
+  border: none;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 14px;
+  outline: none;
+  font-size: 15px;
+  font-weight: 300;
+  color: white;
+  transition: all 0.3s ease;
+}
+
+/* ADD CLASS PARA ANIMACAO DO INPUT */
+.contact-flex .contact-form form input.animate-input,
+.contact-flex .contact-form form textarea.animate-input {
+  animation: animateInput 0.3s ease;
+}
+
+/* DIV DE ERRO PARA O TELEFONE */
+.contact-flex .contact-form form .error-tel {
+  color: red;
+  width: 100%;
+  text-align: start;
+}
+
+.contact-flex .contact-form form input:focus {
+  border-color: #4780b5;
+}
+
+.contact-flex .contact-form form textarea {
+  width: 100%;
+  padding: 10px;
+  background-color: rgb(37, 25, 61);
+  color: white;
+  border: none;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 14px;
+  outline: none;
+  font-size: 15px;
+  font-weight: 300;
+  color: white;
+  resize: none;
+}
+
+.contact-flex .contact-form form textarea:focus {
+  border-color: #4780b5;
+}
+
+.center-submit {
+  width: 100%;
+  text-align: start;
+}
+
+/* ESTILOS PARA A ANIMAÇÃO */
+.container-submit {
+  position: relative;
+  display: block;
+  padding: 3px;
+  border-radius: 0.9em;
+  background: linear-gradient(90deg, #03a9f4, #f441a5);
+  cursor: pointer;
+  transition: all 0.4s ease;
+  align-self: center; /* Centraliza o botão */
+  margin-top: 10px;
+  width: 45%;
+  max-width: 300px;
+}
+
+.container-submit::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 0.9em;
+  background: linear-gradient(90deg, #03a9f4, #f441a5);
+  z-index: 0;
+  filter: blur(0);
+  transition: filter 0.4s ease;
+}
+
+.container-submit.hovered::before {
+  filter: blur(8px);
+}
+
+.container-submit.active::before {
+  filter: blur(3px);
+}
+
+.container-submit input[type="submit"] {
+  position: relative;
+  z-index: 1;
+  font-size: 1.4em;
+  padding: 0.6em 1.8em;
+  border-radius: 0.5em;
+  border: none;
+  background-color: #000;
+  color: #fff;
+  cursor: pointer;
+  display: block;
+  width: 100%;
+  transition: transform 0.2s;
+}
+
+.container-submit.active input[type="submit"] {
+  transform: scale(0.98);
+}
+
+/*** FIM SECTION CONTACT ***/
+
+/* INICIO FOOTER */
+
+footer {
+  background-color: rgb(37, 25, 61);
+  padding: 25px;
+  color: white;
+  font-size: 15px;
+  font-weight: 300;
+  text-align: left;
+}
+
+footer .center-footer p {
+  margin-top: 5px;
+  font-size: 14px;
+  color: white;
+  font-weight: 300;
+}
+
+.center-footer span {
+  color: #4780b5;
+  font-size: 14px;
+}
+
+.center-footer span:hover {
+  color: #a38cfc;
+}
+
+/* KEYFRAMES DOS INPUTS */
+
+@keyframes animateInput {
+  25% {
+    transform: translateX(5px);
+  }
+
+  50% {
+    transform: translateX(-5px);
+  }
+
+  75% {
+    transform: translateX(5px);
+  }
+
+  100% {
+    transform: translateX(-5px);
+  }
+}
+
+/* RESPONSIVO */
+
+@media screen and (max-width: 1043px) {
+  .contact-flex .contact-social .w100 {
+    flex-wrap: wrap; /* PARA CAIR UMA ABAIXO DO OUTRO */
+  }
+
+  .w100 .w50,
+  .w100 .y50 {
+    flex: 0 1 100%; /* PARA OCUPAR TODA A LARGURA */
+  }
+
+  .contact-flex .contact-social .w100 .w50 h4 {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  header > .container {
+    padding: 15px 10px 10px 0px;
+  }
+
+  .menu-desktop {
+    display: none;
+  }
+
+  nav.menu-mobile {
+    display: block;
+  }
+
+  section.informartions {
+    height: auto;
+  }
+
+  section.informartions .flex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0;
+  }
+
+  section.informartions .text-informartions {
+    flex: 0 1 100%;
+    text-align: center;
+    padding: 20px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .text-informartions h2,
+  .text-informartions p {
+    max-width: 100%;
+  }
+
+  .container-button {
+    position: relative;
+    display: block;
+    padding: 3px;
+    border-radius: 0.9em;
+    background: linear-gradient(90deg, #03a9f4, #f441a5);
+    cursor: pointer;
+    transition: background 0.4s ease, transform 0.2s; /* LIMITANDO O EFEITO APENAS NO BACKGROUND */
+    align-self: center;
+    margin-top: 10px;
+    width: 100%;
+    max-width: 400px;
+  }
+
+  /* ESTILOS PARA A DIV INFORMATIONS-BUTTON Q COMEÇA ESCONDIDA */
+  .informartions-button h3 {
+    font-weight: 300;
+    text-transform: uppercase;
+    font-size: 35px;
+    background: linear-gradient(
+      90deg,
+      #03a9f4 40%,
+      #f441a5 60%,
+      #f441a5
+    ); /* gradiente */
+    -webkit-background-clip: text; /* recorta o fundo no texto */
+    -webkit-text-fill-color: transparent; /* deixa o texto transparente para mostrar o gradiente */
+    background-clip: text; /* suporte adicional */
+    color: transparent; /* fallback */
+  }
+
+  .informartions-button .diferentials h4 {
+    font-weight: 300;
+    text-transform: uppercase;
+    font-size: 30px;
+    background: linear-gradient(
+      90deg,
+      #03a9f4 40%,
+      #f441a5 60%,
+      #f441a5
+    ); /* gradiente */
+    -webkit-background-clip: text; /* recorta o fundo no texto */
+    -webkit-text-fill-color: transparent; /* deixa o texto transparente para mostrar o gradiente */
+    background-clip: text; /* suporte adicional */
+    color: transparent; /* fallback */
+  }
+
+  .informartions-button ul {
+    text-align: center; /* centraliza todo o conteúdo da lista */
+  }
+
+  .informartions-button ul li {
+    display: flex;
+    flex-direction: row; /* mantém a bolinha ao lado do texto */
+    justify-content: center; /* centraliza horizontalmente */
+    align-items: center; /* verticalmente centralizado */
+    margin-bottom: 10px;
+  }
+
+
+  .informartions-button .disponibilidade h4 {
+  font-weight: 300;
+  text-transform: uppercase;
+  font-size: 30px;
+  background: linear-gradient(90deg, #03a9f4 40%, #f441a5 60%, #f441a5, #f441a5); /* gradiente */
+  -webkit-background-clip: text; /* recorta o fundo no texto */
+  -webkit-text-fill-color: transparent; /* deixa o texto transparente para mostrar o gradiente */
+  background-clip: text; /* suporte adicional */
+  color: transparent; /* fallback */
+}
+
+  .informartions-button ul li::before {
+    margin-right: 5px; /* espaçamento menor no mobile */
+  }
+
+  .center-img {
+    width: 75%;
+    max-width: 400px;
+    margin: 20px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .center-img .img {
+    width: 95%;
+    padding-top: 95%;
+  }
+
+  .my-services .services-flex .container-services:nth-of-type(2) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 30px 20px;
+  }
+
+  footer {
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 730px) {
+  section.contact .contact-flex {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 30px 0;
+    gap: 30px;
+  }
+
+  .contact-social,
+  .contact-form {
+    flex: 0 1 100% !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    text-align: center !important;
+  }
+
+  .contact-flex .contact-social h2 {
+    width: 100%;
+    text-align: center;
+    font-size: 24px;
+  }
+
+  .contact-flex .contact-social h3 {
+    text-align: center;
+    width: 100%;
+    font-weight: 300;
+    color: white;
+    padding: 15px 0 10px 0;
+    font-size: 20px;
+  }
+
+  .contact-flex .contact-social .w100 {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .w50,
+  .y50 {
+    flex: 0 1 100% !important;
+    width: 100% !important;
+  }
+
+  .w100 .w50 h4,
+  .w100 .w50 a {
+    width: 100%;
+    text-align: center;
+  }
+
+  .w100 .y50 h4 {
+    width: 100%;
+    text-align: center;
+  }
+
+  .container-social {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    padding: 10px 0;
+  }
+
+  .contact-form {
+    width: 100%;
+  }
+
+  .contact-flex .contact-form h3 {
+    width: 100%;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 23px;
+    font-weight: 300;
+    color: white;
+    margin-bottom: 20px;
+    border: none;
+    margin: 30px 0;
+  }
+
+  .contact-form form {
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  .contact-form form input[type="text"],
+  .contact-form form input[type="email"],
+  .contact-form form textarea {
+    width: 100%;
+  }
+
+  .center-submit {
+    text-align: center;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+@media (max-width: 768px) {
+  section.skills .container-skills {
+    width: 90%;
+    max-width: 100%;
+  }
+  .skills .container-skills .icon {
+    width: 50px;
+    height: 55px;
+  }
+}
+
+@media (max-width: 600px) {
+  .flex-projects .project-card {
+    flex: 0 1 100%; /* 1 por linha */
+  }
+}
+
+@media (max-width: 500px) {
+  .my-services .container-services p {
+    padding: 0 10px;
+    text-align: center;
+  }
+}
